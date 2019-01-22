@@ -1,20 +1,39 @@
 <?php
 
-if ($_GET["type"] == "dog") {
-    $img = 'Images/Dog.jpg';
-    $type = 'Dog';
-    $labels = ["Main Colour", "Has Collar", "Name", "Age", "Type", "Weight", "Height"];
+    $page = ''; 
+    $img = '';
+    $type = '';
+    $labels = [];
 
-} else if ($_GET["type"] == "book") {
-    $img = 'Images/book.jpg';
-    $type = 'Book';
-    $labels = ["Colour Language", "Font", "Number of pages" ,"Title" ,"Price" ,"Weight" ,"Height" ,"Genre"];
 
-} else if ($_GET["type"]== "house") {
-    $img = 'Images/house.jpg';
-    $type = 'House';
-    $labels = ["Colour","Door Colour","Number of windows","Type of windows","Number of Storeys","Number of rooms ","Southfacing / Northfacing "];
-}
+    function strip_bad_chars($input) {
+        $output = preg_replace("/[^a-zA-Z0-9_-]/", "", $input);
+        return $output;
+    }
+
+    if(isset($_GET['type'])) {
+        $page = strip_bad_chars($_GET['type']);
+    } 
+
+    if ($page == "dog") {
+        $img = 'Images/Dog.jpg';
+        $type = 'Dog';
+        $labels = ["Main Colour", "Has Collar", "Name", "Age", "Type", "Weight", "Height"];
+    } else if ($page == "book") {
+        $img = 'Images/book.jpg';
+        $type = 'Book';
+        $labels = ["Colour Language", "Font", "Number of pages" ,"Title" ,"Price" ,"Weight" ,"Height" ,"Genre"];
+    } else if ($page == "house") {
+        $img = 'Images/house.jpg';
+        $type = 'House';
+        $labels = ["Colour","Door Colour","Number of windows","Type of windows","Number of Storeys","Number of rooms ","Southfacing / Northfacing "];
+    } 
+    
+    
+    
+    
+
+    
 
 
 ?>
@@ -43,10 +62,10 @@ if ($_GET["type"] == "dog") {
         "<h1>What Features Will Your $type Have ?</h1>";
 
         foreach ($labels as $label) {
-            "<input type=\"checkbox\" name=\"\" id=\"\"><label>$label</label>";
+            "<input type=\"checkbox\"><label>$label</label>";
         }
 
-        "<img src=\"$img\" alt=\"\">";
+        "<img src=\"$img\">";
     ?>
 
     
