@@ -2,14 +2,17 @@
 
 if ($_GET["type"] == "dog") {
     $img = 'Images/Dog.jpg';
+    $type = 'Dog';
     $labels = ["Main Colour", "Has Collar", "Name", "Age", "Type", "Weight", "Height"];
 
 } else if ($_GET["type"] == "book") {
     $img = 'Images/book.jpg';
+    $type = 'Book';
     $labels = ["Colour Language", "Font", "Number of pages" ,"Title" ,"Price" ,"Weight" ,"Height" ,"Genre"];
 
 } else if ($_GET["type"]== "house") {
     $img = 'Images/house.jpg';
+    $type = 'House';
     $labels = ["Colour","Door Colour","Number of windows","Type of windows","Number of Storeys","Number of rooms ","Southfacing / Northfacing "];
 }
 
@@ -36,6 +39,9 @@ if ($_GET["type"] == "dog") {
 <body>
     <h1>What Features Will Your Dog Have ?</h1>
     <?php 
+
+        "<h1>What Features Will Your $type Have ?</h1>";
+
         foreach ($labels as $label) {
             "<input type=\"checkbox\" name=\"\" id=\"\"><label>$label</label>";
         }
