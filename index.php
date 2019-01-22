@@ -1,3 +1,23 @@
+<?php
+
+if ($_GET["type"] == "dog") {
+    $img = 'Images/Dog.jpg';
+    $labels = ["Main Colour", "Has Collar", "Name", "Age", "Type", "Weight", "Height"];
+
+} else if ($_GET["type"] == "book") {
+    $img = 'Images/book.jpg';
+    $labels = ["Colour Language", "Font", "Number of pages" ,"Title" ,"Price" ,"Weight" ,"Height" ,"Genre"];
+
+} else if ($_GET["type"]== "house") {
+    $img = 'Images/house.jpg';
+    $labels = ["Colour","Door Colour","Number of windows","Type of windows","Number of Storeys","Number of rooms ","Southfacing / Northfacing "];
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,13 +35,13 @@
 </head>
 <body>
     <h1>What Features Will Your Dog Have ?</h1>
-    <input type="checkbox"><label for="">Main Colour</label>
-    <input type="checkbox"><label for="">Has Collar</label>
-    <input type="checkbox"><label for="">Name</label>
-    <input type="checkbox"><label for="">Age</label>
-    <input type="checkbox"><label for="">Type</label>
-    <input type="checkbox"><label for="">Weight</label>
-    <input type="checkbox"><label for="">Height</label>
+    <?php 
+        foreach ($labels as $label) {
+            "<input type=\"checkbox\" name=\"\" id=\"\"><label>$label</label>";
+        }
+
+        "<img src=\"$img\" alt=\"\">";
+    ?>
 
     
 </body>
