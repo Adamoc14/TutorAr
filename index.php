@@ -76,10 +76,10 @@
 
         div {
             border: 3px solid #29B6F6;
-            height: 95vh;
+            height: 97vh;
             margin: 1vh 8vw;
             width: 36vw;
-            border-radius: 20px;
+            border-radius: 15%;
             position: relative;
             left: 23vw;
         }
@@ -89,6 +89,9 @@
             justify-content: center;
             font-family: monospace;
             text-align: center;
+            font-size: 18px;
+            position: relative;
+            top: 7vh;
         }
 
         form {
@@ -115,12 +118,13 @@
             width: 20vw;
             margin-left: 6vw;
             position: relative;
-            top: 3vh;
+            top: 7vh;
+            left: 1vw;
         }
 
         .button{
             position: relative;
-            top: -32vh;
+            top: -27vh;
             left: 6vw;
             padding: 1vh 3vw;
             border-radius: 20px;
