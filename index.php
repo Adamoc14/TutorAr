@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
     $type = ''; 
     $img = '';
     $typeLabel = '';
@@ -25,7 +27,7 @@
         } else if ($type == "book") {
             $img = 'Images/book.jpg';
             $typeLabel = 'Book';
-            array_push($labels, "Colour Language", "Font", "Number of pages" ,"Title" ,"Price" ,"Weight" ,"Height" ,"Genre");
+            array_push($labels, "Font", "Number of pages" ,"Title" ,"Price" ,"Weight" ,"Height" ,"Genre");
             // echo $img , $typeLabel;
             // foreach($labels as $label){
             //     print_r($label);
@@ -64,6 +66,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -71,40 +74,109 @@
 
     <style>
 
+        div {
+            border: 3px solid #29B6F6;
+            height: 95vh;
+            margin: 1vh 8vw;
+            width: 36vw;
+            border-radius: 20px;
+            position: relative;
+            left: 23vw;
+        }
 
         h1 {
             display: flex;
             justify-content: center;
             font-family: monospace;
+            text-align: center;
         }
 
-        main{
-            margin: 5vh 1vw;
+        form {
+            margin: 8vh 6vw;
+            display: flex;
+            align-items: self-end;
+            flex-direction: column;
         }
 
-        label{
-            margin-left: 1vw;
+        #labels {
+            margin-left: 2vw;
+            margin-bottom: 2vh;
+            position: relative;
+            top: -2.5vh;
+        }
+
+        input[type="checkbox"] {
+            position: relative;
+            top: -34vh;
+            margin-bottom: 2.5vh;
         }
         
         img {
             width: 20vw;
-            margin: -49vh auto;
-            display : flex;
+            margin-left: 6vw;
+            position: relative;
+            top: 3vh;
+        }
+
+        .button{
+            position: relative;
+            top: -32vh;
+            left: 6vw;
+            padding: 1vh 3vw;
+            border-radius: 20px;
+            border: 1px solid #29B6F6;
         }
     
+    
     </style>
+
+    
 </head>
 <body>
     <?php 
 
+        $strArray = array("0","1","2","3","4","5","6");
+        $strSelected = "";
+        
+       echo "<div>";
        echo  "<h1>What Features Will Your $typeLabel Have ?</h1>";
+       echo "<img src=\"$img\">";
 
-        foreach ($labels as $label) {
-           echo  "<main><input type=\"checkbox\"><label>$label</label></main>";
+       echo "<form action = \"inputValues.php\" method=\"post\" id=\"form1\" >";
+
+       foreach ($labels as $label) {
+            
+             echo  "<label for=\"Checkboxes\" id=\"labels\">$label</label>";
+
         }
 
-        echo "<img src=\"$img\">";
+        for($i = 0 ; $i < count($strArray); $i ++){
+            $strSelected = $strArray[$i];
+            echo "<input type=\"checkbox\" name=\"Checkboxes[]\" value=\"$strSelected\">";
+        }
+
+        
+
+
+        echo "<button type=\"submit\" class=\"button\" >Click Me!</button>";
+
+        echo "</form>";
+
+        echo "</div>";
+
+        $_SESSION['type'] = $type;
+
+        
+
     ?>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+
+    </script>
+
+    
 
     
 </body>
