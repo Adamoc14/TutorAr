@@ -84,6 +84,8 @@
             left: 23vw;
         }
 
+        
+
         h1 {
             display: flex;
             justify-content: center;
@@ -101,6 +103,12 @@
             flex-direction: column;
         }
 
+        @media screen and (min-width:120em){  /*1920px*/
+            form{
+                align-items : center;
+            }
+        }
+
         #labels {
             margin-left: 2vw;
             margin-bottom: 2vh;
@@ -108,10 +116,26 @@
             top: -2.5vh;
         }
 
+        @media screen and (min-width:120em){  /*1920px*/
+            #labels {
+                margin-left: 0vw;
+                left: -5vw;
+            }
+        }
+
+
+
         input[type="checkbox"] {
             position: relative;
             top: -34vh;
             margin-bottom: 2.5vh;
+        }
+
+        @media screen and (min-width:120em){  /*1920px*/
+            input[type="checkbox"] {
+                top: -34.5vh;
+                left: -10vw;
+            }
         }
         
         img {
@@ -129,6 +153,13 @@
             padding: 1vh 3vw;
             border-radius: 20px;
             border: 1px solid #29B6F6;
+        }
+
+        @media screen and (min-width:120em){  /*1920px*/
+            .button{
+                top: -34vh;
+                left: 0vw;
+            }
         }
     
     
