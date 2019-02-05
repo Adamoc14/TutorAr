@@ -103,7 +103,7 @@
             flex-direction: column;
         }
 
-        @media screen and (min-width:120em){  /*1920px*/
+        @media screen and (min-width:87em){  /*1920px*/
             form{
                 align-items : center;
             }
@@ -116,7 +116,7 @@
             top: -2.5vh;
         }
 
-        @media screen and (min-width:120em){  /*1920px*/
+        @media screen and (min-width:87em){  /*1920px*/
             #labels {
                 margin-left: 0vw;
                 left: -5vw;
@@ -131,7 +131,7 @@
             margin-bottom: 2.5vh;
         }
 
-        @media screen and (min-width:120em){  /*1920px*/
+        @media screen and (min-width:87em){  /*1920px*/
             input[type="checkbox"] {
                 top: -34.5vh;
                 left: -10vw;
@@ -155,7 +155,7 @@
             border: 1px solid #29B6F6;
         }
 
-        @media screen and (min-width:120em){  /*1920px*/
+        @media screen and (min-width:87em){  /*1920px*/
             .button{
                 top: -34vh;
                 left: 0vw;
