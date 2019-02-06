@@ -25,9 +25,20 @@
     <title>Document</title>
     <style>
 
+        div{
+            width: 80vw;
+            top: -1000px;
+            position:relative;
+            margin: 7vh auto;
+            height: 87vh;
+            transform-origin: 5vh 70vw;
+            background: rgba(255,241,118,1);
+            animation: fallDown 3.5s ease forwards;
+        }
+
         .enterImg{
             width: 4vw;
-            left: 15vw;
+            left: 5vw;
             top: 9vh;
             position: relative;
             height: 8vh;
@@ -60,7 +71,7 @@
             top: -46vh;
             width: 20vw;
             left: 30vw;
-            animation: firstExplain 9.5s forwards;
+            animation: firstExplain 9.5s .5s  forwards;
         }
 
         .arrowFour{
@@ -79,7 +90,7 @@
             margin-left: 61vw;
             text-align: center;
             opacity : .1;
-            animation: dropIn 9.5s forwards;
+            animation: dropIn 9.5s .5s forwards;
 
         }
 
@@ -91,7 +102,14 @@
             opacity: 0;
             animation: dropIn2 9.5s 8.5s  forwards;
         }
-
+        button{
+            position: relative;
+            top: -93vh;
+            left: 65vw;
+            font-size: 20px;
+            background: rgba(255,241,118,1);
+            border: none;
+        }
         @keyframes firstExplain{
             0%{transform:translateX( 30px);}
             50%{transform:translateX(0px); opacity:.8;}
@@ -118,22 +136,41 @@
             100%{ opacity:1; }
         }
 
+        @keyframes fallDown{
+            0%{opacity: 0; transform : rotateZ(-270deg);}
+            70%{ transform: translateY(1000px);}
+            100%{transform : translateY(1000px); opacity: 1;}
+        }
+
+        
+
 
 
     </style>
 </head>
 <body>
+    <div>
+        <h1>What's going on in this code?</h1> <img src="Images/Picture1.png" alt="" class="enterImg">
+        <h3>This code represents what you just did on previous two pages</h3>
 
-    <h1>What's going on in this code?</h1> <img src="Images/Picture1.png" alt="" class="enterImg">
-    <h3>This code represents what you just did on previous two pages</h3>
+        <img src="<?php echo $img ?>" alt="">
+        <img src="Images/Picture2.png" alt="" class="arrowTwo">
+        <h3 class="firstExplain">This is the same as picking to make the <?php echo $_SESSION['type']; ?> as an object </h3>
+        <img src="Images/Picture3.png" alt="" class="arrowFour">
+        <h3 class="secondExplain">This is the same as ticking checkboxes and giving your <?php echo $_SESSION['type']; ?> some properties.</h3>
+        <button>Continue</button>
+    </div>
 
-    <img src="<?php echo $img ?>" alt="">
-    <img src="Images/Picture2.png" alt="" class="arrowTwo">
-    <h3 class="firstExplain">This is the same as picking to make the <?php echo $_SESSION['type']; ?> as an object </h3>
-    <img src="Images/Picture3.png" alt="" class="arrowFour">
-    <h3 class="secondExplain">This is the same as ticking checkboxes and giving your <?php echo $_SESSION['type']; ?>  some properties.
- </h3>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    <script>
+        var button = document.querySelector('button');
+        var div = document.querySelector('div');
+        $(button).click(function(){
+            $(div).css('display', 'none'); 
+        });
+    
+    </script>
     
 </body>
 </html>

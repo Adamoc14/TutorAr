@@ -27,7 +27,7 @@
         } else if ($type == "book") {
             $img = 'Images/book.jpg';
             $typeLabel = 'Book';
-            array_push($labels, "Font", "Number of pages" ,"Title" ,"Price" ,"Weight" ,"Height" ,"Genre");
+            array_push($labels, "Font", "Number of pages" ,"Title" ,"Price" ,"Weight" ,"Author" ,"Genre");
             // echo $img , $typeLabel;
             // foreach($labels as $label){
             //     print_r($label);
