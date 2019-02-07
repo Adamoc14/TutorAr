@@ -154,14 +154,23 @@ $labelsCount = 0;
         Note : each checkbox must have a different value set */
 
 
+        
+
+
 
     ?>
+
+    <main id= "results"></main>
 
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>
+
+//this is one way of changing the data from the form into objects and sending them as json except i don't know how to send the 
+// json formatted result so we're going to try above method using all php and sending all the data to a json file 
+
 
 //I'm transferring the form data into an url call and posting it to other JSONformatter.php page so that I can 
 //access it and pull it back into the app  
@@ -187,14 +196,16 @@ $labelsCount = 0;
         
     };
 
-    $('#form1').submit(function(){
-        var result = $('#form1').serializeObject();
+    $('form').submit(function(event){
+        var result = $('form').serializeObject();
         //This basically just makes an object out of each of the form inputs
         var jsonResult = JSON.stringify(result);
         console.log(jsonResult);
         $.get('JSONFormatter.php', {data: jsonResult} , function(response){
-            alert(response);
+            $('#results').html(jsonResult);
         });
+
+        event.preventDefault();
 
     });
 

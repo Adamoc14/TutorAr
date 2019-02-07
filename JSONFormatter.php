@@ -1,5 +1,10 @@
 <?php 
-    if (!empty($_GET['jsonResult'])){
-        echo $_GET['jsonResult'];
+
+    $data = object();
+
+    if (!empty($_GET['data'])){
+        $data = json_decode($_GET['data']);
     }
+
+    echo $data;
 ?>
