@@ -56,6 +56,8 @@ $labelsCount = 0;
 
     <?php
 
+        
+
         if ($_SESSION['type']== "dog") {
             array_push($labels, "Main Colour", "Has Collar", "Name", "Age", "Type", "Weight", "Height");
         } else if($_SESSION['type']== "book"){
@@ -68,7 +70,7 @@ $labelsCount = 0;
 
         $labelsCount = count($labels) - 1;
 
-        echo "<form action = \"JSONFormatter.php\" method=\"get\" id=\"form1\" >";
+        echo "<form method=\"post\" id=\"form1\" >";
 
         if(!empty($_POST["Checkboxes"])){
             foreach($_POST["Checkboxes"] as $checkbox) {
@@ -95,38 +97,38 @@ $labelsCount = 0;
                         }
                     } else if($_SESSION['type']== "book"){
                         if(strpos($labels[$checkbox], "Font")!== false){
-                            echo "<select><option>Times New Roman</option><option>Georgia</option><option>Fantasy</option></select><br>";
+                            echo "<select name=\"book-font\"><option>Times New Roman</option><option>Georgia</option><option>Fantasy</option></select><br>";
                         } else if (strpos($labels[$checkbox], "Number of pages")!== false){
-                            echo "<input type= \"text\"><br>";
+                            echo "<input type= \"text\" name=\"book-page-num\"><br>";
                         } else if (strpos($labels[$checkbox], "Title")!== false){
-                            echo "<input type= \"text\"><br>";
+                            echo "<input type= \"text\" name=\"book-title\"><br>";
                         } else if (strpos($labels[$checkbox], "Price")!== false) {
-                            echo "<input type= \"text\"><br>";
+                            echo "<input type= \"text\" name=\"book-price\"><br>";
                         } else if (strpos($labels[$checkbox], "Weight")!== false){
-                            echo "<input type= \"text\"><br>";
+                            echo "<input type= \"text\" name=\"book-weight\"><br>";
                         } else if (strpos($labels[$checkbox], "Author")!== false){
-                            echo "<input type= \"text\"><br>";
+                            echo "<input type= \"text\" name=\"book-author\"><br>";
                         } elseif (strpos($labels[$checkbox], "Genre")!== false) {
-                            echo "<select><option>Horror</option><option>Action</option><option>Romance</option></select><br>";
+                            echo "<select name=\"book-genre\"><option>Horror</option><option>Action</option><option>Romance</option></select><br>";
                         } else{
                             echo ""; 
                         }
                         
                     } else if($_SESSION['type'] == "house") {
                         if(strpos($labels[$checkbox], "Colour")!== false){
-                            echo "<select><option>Red</option><option>Black</option><option>Brown</option></select><br>";
+                            echo "<select name=\"house-colour\"><option>Red</option><option>Black</option><option>Brown</option></select><br>";
                         } else if (strpos($labels[$checkbox], "Door Colour")!== false){
-                            echo "<select><option>Red</option><option>Black</option><option>Brown</option></select><br>";
+                            echo "<select name=\"house-door-colour\"><option>Red</option><option>Black</option><option>Brown</option></select><br>";
                         } else if (strpos($labels[$checkbox], "Number of windows")!== false){
-                            echo "<input type= \"text\"><br>";
+                            echo "<input type= \"text\" name=\"house-windows-num\"><br>";
                         } else if (strpos($labels[$checkbox], "Type of windows")!== false) {
-                            echo "<select><option>Double Glazed</option><option>Single Glazed</option><option>Triple Glazed</option></select><br>";
+                            echo "<select name=\"house-windows-type\"><option>Double Glazed</option><option>Single Glazed</option><option>Triple Glazed</option></select><br>";
                         } else if (strpos($labels[$checkbox], "Number of Storeys")!== false){
-                            echo "<input type= \"text\"><br>";
+                            echo "<input type= \"text\" name=\"house-storeys-num\"><br>";
                         } else if (strpos($labels[$checkbox], "Number of rooms")!== false){
-                            echo "<input type= \"text\"><br>";
+                            echo "<input type= \"text\" name=\"house-rooms-num\"><br>";
                         } elseif (strpos($labels[$checkbox], "Southfacing / Northfacing")!== false) {
-                            echo "S<input type= \"radio\" value= \"Southfacing\">&nbsp;&nbsp;N<input type= \"radio\" value= \"Northfacing\"><br>";
+                            echo "S<input type= \"radio\" value= \"Southfacing\" name=\"south/north\">&nbsp;&nbsp;N<input type= \"radio\" value= \"Northfacing\" name=\"south/north\"><br>";
                         } else{
                             echo ""; 
                         }
@@ -141,7 +143,80 @@ $labelsCount = 0;
         }
 
 
-        echo "<button type=\"submit\" id=\"btn\">Submit</button>";
+
+
+
+        echo "<button type=\"submit\" name=\"submit\" id=\"btn\">Submit</button>";
+
+        $message = "";
+        $error = '';
+
+        if(isset($_POST['submit'])){
+            // if ($_SESSION['type']== "dog" && empty($_POST['main-colour']) || empty($_POST['has-collar']) || empty($_POST['dog-name']) || empty($_POST['dog-age']) || empty($_POST['dog-type']) || empty($_POST['dog-weight']) || empty($_POST['dog-height']) )  {
+            //         $error = "<label>Enter Dog Details</label>";
+            // } else if($_SESSION['type']== "book" && empty($_POST['book-font']) || empty($_POST['book-page-num']) || empty($_POST['book-title']) || empty($_POST['book-price']) || empty($_POST['book-weight']) || empty($_POST['book-author']) || empty($_POST['book-genre']) )  {
+            //         $error = "<label>Enter Book Details</label>";
+            // } else if($_SESSION['type'] == "house" && empty($_POST['house-colour']) || empty($_POST['house-door-colour']) || empty($_POST['house-windows-num']) || empty($_POST['house-windows-type']) || empty($_POST['house-storeys-num']) || empty($_POST['house-rooms-num']) || empty($_POST['south/north']) )  {
+            //         $error = "<label>Enter Book Details</label>";
+            // } else {
+
+            
+            if(file_exists('data.json')){
+                $current_data = file_get_contents('data.json');
+                $array_data = json_decode($current_data , true);
+
+                if ($_SESSION['type']== "dog") {
+                    $extra = array(
+                        'Main Colour' => $_POST['main-colour'],
+                        'Has Collar' => $_POST['has-collar'],
+                        'Dog Name' => $_POST['dog-name'],
+                        'Dog Age' => $_POST['dog-age'],
+                        'Dog Type' => $_POST['dog-type'],
+                        'Dog Weight' => $_POST['dog-weight'],
+                        'Dog Height' => $_POST['dog-height'],
+
+                    );
+                } else if($_SESSION['type']== "book"){
+                    $extra = array(
+                        'Book Font' => $_POST['book-font'],
+                        'Number Of Pages' => $_POST['book-page-num'],
+                        'Book Title' => $_POST['book-title'],
+                        'Book Price' => $_POST['book-price'],
+                        'Book Weight' => $_POST['book-weight'],
+                        'Book Author' => $_POST['book-author'],
+                        'Book Genre' => $_POST['book-genre'],
+
+                    );
+
+
+                } else if($_SESSION['type'] == "house") {
+                    $extra = array(
+                        'House Colour' => $_POST['house-colour'],
+                        'Door Colour' => $_POST['house-door-colour'],
+                        'Number Of Windows' => $_POST['house-windows-num'],
+                        'Type Of Windows' => $_POST['house-windows-type'],
+                        'Number Of Storeys' => $_POST['house-storeys-num'],
+                        'Number Of Rooms' => $_POST['house-rooms-num'],
+                        'Southfacing/Northfacing' => $_POST['south/north'],
+
+                    );
+
+                } else {
+                        
+                } 
+
+                $array_data[] = $extra;
+                $final_data = json_encode($array_data);
+                print_r($final_data);
+                file_put_contents('data.json', $final_data); 
+
+
+            } else {
+                $error = 'JSON File does not exist';
+            }
+        }
+    // }
+
        
 
         echo "</form>";
@@ -174,40 +249,40 @@ $labelsCount = 0;
 
 //I'm transferring the form data into an url call and posting it to other JSONformatter.php page so that I can 
 //access it and pull it back into the app  
-    $.fn.serializeObject = function() {
-        var object = {};
-        var arrayOfObjects = this.serializeArray();
-        $.each(arrayOfObjects, function(){
-            console.log(object[this.name]);
-            //We just console.logged above and found that everything was undefined this was because there 
-            // was indeed nothing in the object at this time so what we're saying is when the object is undefined push the this.name into the object 
-            // so it looks something like this {name : Adam}
-            if(object[this.name]!== undefined){
-                if (!object[this.name].push) {
-                    object[this.name] = [object[this.name]];
-                }
-                object[this.name].push(this.value || '');  
-            } else {
-                object[this.name] = this.value || '';
-            }
-        });
+    // $.fn.serializeObject = function() {
+    //     var object = {};
+    //     var arrayOfObjects = this.serializeArray();
+    //     $.each(arrayOfObjects, function(){
+    //         console.log(object[this.name]);
+    //         //We just console.logged above and found that everything was undefined this was because there 
+    //         // was indeed nothing in the object at this time so what we're saying is when the object is undefined push the this.name into the object 
+    //         // so it looks something like this {name : Adam}
+    //         if(object[this.name]!== undefined){
+    //             if (!object[this.name].push) {
+    //                 object[this.name] = [object[this.name]];
+    //             }
+    //             object[this.name].push(this.value || '');  
+    //         } else {
+    //             object[this.name] = this.value || '';
+    //         }
+    //     });
         
-        return object;
+    //     return object;
         
-    };
+    // };
 
-    $('form').submit(function(event){
-        var result = $('form').serializeObject();
-        //This basically just makes an object out of each of the form inputs
-        var jsonResult = JSON.stringify(result);
-        console.log(jsonResult);
-        $.get('JSONFormatter.php', {data: jsonResult} , function(response){
-            $('#results').html(jsonResult);
-        });
+    // $('form').submit(function(event){
+    //     var result = $('form').serializeObject();
+    //     //This basically just makes an object out of each of the form inputs
+    //     var jsonResult = JSON.stringify(result);
+    //     console.log(jsonResult);
+    //     $.get('JSONFormatter.php', {data: jsonResult} , function(response){
+    //         $('#results').html(jsonResult);
+    //     });
 
-        event.preventDefault();
+    //     event.preventDefault();
 
-    });
+    // });
 
 
 </script>
