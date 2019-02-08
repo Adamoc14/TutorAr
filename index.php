@@ -19,7 +19,7 @@
         if ($type == "dog") {
             $img = 'Images/Dog.jpg';
             $typeLabel = 'Dog';
-            array_push($labels, "Main Colour", "Has Collar", "Name", "Age", "Type", "Weight", "Height");
+            array_push($labels, "Main Colour", "Bushy Tail", "Name", "Age", "Type", "Weight", "Height");
             // echo $img , $typeLabel;
             // foreach($labels as $label){
             //     print_r($label);

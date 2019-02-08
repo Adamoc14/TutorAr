@@ -59,7 +59,7 @@ $labelsCount = 0;
         
 
         if ($_SESSION['type']== "dog") {
-            array_push($labels, "Main Colour", "Has Collar", "Name", "Age", "Type", "Weight", "Height");
+            array_push($labels, "Main Colour", "Bushy Tail", "Name", "Age", "Type", "Weight", "Height");
         } else if($_SESSION['type']== "book"){
             array_push($labels, "Font", "Number of pages" ,"Title" ,"Price" ,"Weight" ,"Author" ,"Genre");
         } else if($_SESSION['type'] == "house") {
@@ -79,15 +79,15 @@ $labelsCount = 0;
                     if ($_SESSION['type']== "dog") {
             
                         if(strpos($labels[$checkbox], "Main Colour")!== false){
-                            echo "<select name=\"main-colour\"><option>Red</option><option>Black</option><option>Brown</option></select><br>";
-                        } else if (strpos($labels[$checkbox], "Has Collar")!== false){
-                            echo "Yes<input type= \"radio\" value= \"Yes\" name=\"has-collar\">&nbsp;&nbsp;No<input type= \"radio\" value= \"No\" name=\"has-collar\"><br>";
+                            echo "<select name=\"main-colour\"><option>Grey</option><option>White</option><option>Jet Black</option><option>Red</option><option>Gold</option><option>Charcoal</option><option>Silver</option></select><br>";
+                        } else if (strpos($labels[$checkbox], "Bushy Tail")!== false){
+                            echo "Yes<input type= \"radio\" value= \"Yes\" name=\"has-bushy-tail\">&nbsp;&nbsp;No<input type= \"radio\" value= \"No\" name=\"has-bushy-tail\"><br>";
                         } else if (strpos($labels[$checkbox], "Name")!== false){
                             echo "<input type= \"text\" name=\"dog-name\"><br>";
                         } else if (strpos($labels[$checkbox], "Age")!== false) {
                             echo "<input type= \"text\" name=\"dog-age\"><br>";
                         } else if (strpos($labels[$checkbox], "Type")!== false){
-                            echo "<select name=\"dog-type\"><option>Jack Russell</option><option>Dalmation</option><option>Labrador</option></select><br>";
+                            echo "<select name=\"dog-type\"><option>Wolfhound</option><option>Husky</option><option>Greyhound</option><option>Korean Jindo</option><option>Golden Retriever</option><option>Labrador</option><option>Samoy</option></select><br>";
                         } else if (strpos($labels[$checkbox], "Weight")!== false){
                             echo "<input type= \"text\" name=\"dog-weight\"><br>";
                         } elseif (strpos($labels[$checkbox], "Height")!== false) {
@@ -152,7 +152,7 @@ $labelsCount = 0;
         $error = '';
 
         if(isset($_POST['submit'])){
-            // if ($_SESSION['type']== "dog" && empty($_POST['main-colour']) || empty($_POST['has-collar']) || empty($_POST['dog-name']) || empty($_POST['dog-age']) || empty($_POST['dog-type']) || empty($_POST['dog-weight']) || empty($_POST['dog-height']) )  {
+            // if ($_SESSION['type']== "dog" && empty($_POST['main-colour']) || empty($_POST['has-bushy-tail']) || empty($_POST['dog-name']) || empty($_POST['dog-age']) || empty($_POST['dog-type']) || empty($_POST['dog-weight']) || empty($_POST['dog-height']) )  {
             //         $error = "<label>Enter Dog Details</label>";
             // } else if($_SESSION['type']== "book" && empty($_POST['book-font']) || empty($_POST['book-page-num']) || empty($_POST['book-title']) || empty($_POST['book-price']) || empty($_POST['book-weight']) || empty($_POST['book-author']) || empty($_POST['book-genre']) )  {
             //         $error = "<label>Enter Book Details</label>";
@@ -167,36 +167,36 @@ $labelsCount = 0;
 
                 if ($_SESSION['type']== "dog") {
                     $extra = array(
-                        'Main Colour' => $_POST['main-colour'],
-                        'Has Collar' => $_POST['has-collar'],
-                        'Dog Name' => $_POST['dog-name'],
-                        'Dog Age' => $_POST['dog-age'],
-                        'Dog Type' => $_POST['dog-type'],
-                        'Dog Weight' => $_POST['dog-weight'],
-                        'Dog Height' => $_POST['dog-height'],
+                        'Main_Colour' => $_POST['main-colour'],
+                        'Bushy_Tail' => $_POST['has-bushy-tail'],
+                        'Dog_Name' => $_POST['dog-name'],
+                        'Dog_Age' => $_POST['dog-age'],
+                        'Dog_Type' => $_POST['dog-type'],
+                        'Dog_Weight' => $_POST['dog-weight'],
+                        'Dog_Height' => $_POST['dog-height'],
 
                     );
                 } else if($_SESSION['type']== "book"){
                     $extra = array(
-                        'Book Font' => $_POST['book-font'],
-                        'Number Of Pages' => $_POST['book-page-num'],
-                        'Book Title' => $_POST['book-title'],
-                        'Book Price' => $_POST['book-price'],
-                        'Book Weight' => $_POST['book-weight'],
-                        'Book Author' => $_POST['book-author'],
-                        'Book Genre' => $_POST['book-genre'],
+                        'Book_Font' => $_POST['book-font'],
+                        'Number_Of_Pages' => $_POST['book-page-num'],
+                        'Book_Title' => $_POST['book-title'],
+                        'Book_Price' => $_POST['book-price'],
+                        'Book_Weight' => $_POST['book-weight'],
+                        'Book_Author' => $_POST['book-author'],
+                        'Book_Genre' => $_POST['book-genre'],
 
                     );
 
 
                 } else if($_SESSION['type'] == "house") {
                     $extra = array(
-                        'House Colour' => $_POST['house-colour'],
-                        'Door Colour' => $_POST['house-door-colour'],
-                        'Number Of Windows' => $_POST['house-windows-num'],
-                        'Type Of Windows' => $_POST['house-windows-type'],
-                        'Number Of Storeys' => $_POST['house-storeys-num'],
-                        'Number Of Rooms' => $_POST['house-rooms-num'],
+                        'House_Colour' => $_POST['house-colour'],
+                        'Door_Colour' => $_POST['house-door-colour'],
+                        'Number_Of_Windows' => $_POST['house-windows-num'],
+                        'Type_Of_Windows' => $_POST['house-windows-type'],
+                        'Number_Of_Storeys' => $_POST['house-storeys-num'],
+                        'Number_Of_Rooms' => $_POST['house-rooms-num'],
                         'Southfacing/Northfacing' => $_POST['south/north'],
 
                     );
