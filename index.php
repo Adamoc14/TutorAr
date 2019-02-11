@@ -84,6 +84,14 @@
             left: 23vw;
         }
 
+        @media screen and (min-width:20em) {  /*320px*/
+            div {
+
+                margin: 1vh -17vw;
+                width: 82vw;
+            }
+        }
+
         
 
         h1 {
@@ -96,11 +104,21 @@
             top: 7vh;
         }
 
+        
+
+
         form {
             margin: 8vh 6vw;
             display: flex;
             align-items: self-end;
             flex-direction: column;
+        }
+
+        @media screen and (min-width:20em) {  /*320px*/
+            form {
+                margin: 0vh 17vw;
+            }
+
         }
 
         @media screen and (min-width:87em){  /*1920px*/
@@ -115,6 +133,13 @@
             position: relative;
             top: -2.5vh;
         }
+        
+        @media screen and (min-width:20em) {  /*320px*/
+            #labels {
+                margin-left: 10vw;
+                top:2.5vh;
+            }
+        }
 
         @media screen and (min-width:87em){  /*1920px*/
             #labels {
@@ -122,6 +147,8 @@
                 left: -5vw;
             }
         }
+
+        
 
 
 
@@ -146,13 +173,30 @@
             left: 1vw;
         }
 
+        @media screen and (min-width:20em) {  /*320px*/
+            img {
+                width: 35vw;
+                margin: 5vh 19vw;
+            }
+        }
+
+
+
         .button{
             position: relative;
             top: -27vh;
             left: 6vw;
             padding: 1vh 3vw;
             border-radius: 20px;
+            background:white;
             border: 1px solid #29B6F6;
+        }
+
+        @media screen and (min-width:20em) {  /*320px*/
+            .button{
+                top: -30vh;
+                padding: 1vh 11vw;
+            }
         }
 
         @media screen and (min-width:87em){  /*1920px*/
