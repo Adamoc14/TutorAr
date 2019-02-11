@@ -127,7 +127,7 @@
                 top: -26vh;
                 width: 13vw;
                 height: 10vh;
-                left: 27vw;
+                left: 34vw;
             }
 
         }
@@ -164,7 +164,7 @@
 
         @media screen and (min-width:20em) {  /*320px*/
             .firstExplain{
-                top: -60vh;
+                top: -40vh;
             }
 
         }
