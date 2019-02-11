@@ -160,7 +160,7 @@
 
         @media screen and (min-width:20em) {  /*320px*/
             input[type="checkbox"] {
-                top: -25vh;
+                top: -40vh;
             }
         }
 
