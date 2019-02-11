@@ -22,11 +22,25 @@ $labelsCount = 0;
             font-family: fantasy;
         }
 
+        @media screen and (min-width:20em) {  /*320px*/
+            h2{
+                font-size: 19px;
+            }
+        }
+
         form#form1 {
             display: flex;
             flex-direction: column;
             width: 12vw;
             margin: 0 20vw;
+        }
+
+        @media screen and (min-width:20em) {  /*320px*/
+            form#form1 {
+                width: 50vw;
+                margin: 0 10vw;
+            }
+
         }
 
         img.img {
@@ -37,10 +51,23 @@ $labelsCount = 0;
             border-radius: 20px;
         }
 
+        @media screen and (min-width:20em) {  /*320px*/
+            img.img {
+                top: -88vh;
+                left: 32vw;
+                width: 60vw;
+            }
+
+
+        }
+
         button#btn {
             position: relative;
             top: 6vh;
             left: 20vw;
+        }
+
+        @media screen and (min-width:20em) {  /*320px*/
         }
 
 

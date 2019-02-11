@@ -36,6 +36,15 @@
             animation: fallDown 3.5s ease forwards;
         }
 
+        @media screen and (min-width:20em) {  /*320px*/
+            div{
+                width: 95vw;
+                margin: 30vh auto;
+                height: 43vh;
+            }
+
+        }
+
         .enterImg{
             width: 4vw;
             left: 5vw;
@@ -44,19 +53,47 @@
             height: 8vh;
         }
 
+        @media screen and (min-width:20em) {  /*320px*/
+            .enterImg{
+                width: 4vw;
+                left: 3vw;
+                top: 1vh;
+                height: 3vh;
+            }
+        }
+
         h1, h3{
             display: flex;
             justify-content:center;
 
         }
+
+        
         h1{
             position: relative;
             top: 15vh;
         }
 
+        @media screen and (min-width:20em) {  /*320px*/
+            h1{
+                font-size: 16px;
+                top: 6vh;
+            }
+
+        }
+
         h3{
             position: relative;
             top: 0vh;
+        }
+        @media screen and (min-width:20em) {  /*320px*/
+            h3{
+                top: -4vh;
+                left: 5vw;
+                font-size: 9px;
+                text-align: center;
+            }
+
         }
 
 
@@ -65,6 +102,17 @@
             height:40vh;
             margin: 2vh 10vw;
         }
+
+        @media screen and (min-width:20em) {  /*320px*/
+            img{
+                width: 69vw;
+                position: relative;
+                top: -4vh;
+                height: 22vh;
+                margin: 2vh 5vw;
+            }
+
+        }
     
         .arrowTwo{
             position: relative;
@@ -72,6 +120,16 @@
             width: 20vw;
             left: 30vw;
             animation: firstExplain 9.5s .5s  forwards;
+        }
+
+        @media screen and (min-width:20em) {  /*320px*/
+            .arrowTwo{
+                top: -26vh;
+                width: 13vw;
+                height: 10vh;
+                left: 41vw;
+            }
+
         }
 
         .arrowFour{
@@ -84,6 +142,16 @@
             animation: secondExplain 9.5s 9.5s forwards;
         }
 
+        @media screen and (min-width:20em) {  /*320px*/
+            .arrowFour{
+                top: -49vh;
+                height: 10vh;
+                width: 13vw;
+                left: 50vw;
+            }
+
+        }
+
         .firstExplain{
             position: relative;
             top: -69vh;
@@ -91,6 +159,13 @@
             text-align: center;
             opacity : .1;
             animation: dropIn 9.5s .5s forwards;
+
+        }
+
+        @media screen and (min-width:20em) {  /*320px*/
+            .firstExplain{
+                top: -21vh;
+            }
 
         }
 
@@ -102,6 +177,14 @@
             opacity: 0;
             animation: dropIn2 9.5s 8.5s  forwards;
         }
+
+        @media screen and (min-width:20em) {  /*320px*/
+            .secondExplain{
+                top: -60vh;
+            }
+
+        }
+
         button{
             position: relative;
             top: -93vh;
@@ -110,6 +193,15 @@
             background: rgba(255,241,118,1);
             border: none;
         }
+
+        @media screen and (min-width:20em) {  /*320px*/
+            button{
+                top: -52vh;
+                left: 76vw;
+                font-size: 9px;
+            }
+        }
+
         @keyframes firstExplain{
             0%{transform:translateX( 30px);}
             50%{transform:translateX(0px); opacity:.8;}
