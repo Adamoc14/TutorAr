@@ -59,7 +59,7 @@ $labelsCount = 0;
 
         @media screen and (min-width:20em) {  /*320px*/
             img.img {
-                top: -95vh;
+                top: -105vh;
                 left: 32vw;
                 width: 60vw;
             }
@@ -75,8 +75,7 @@ $labelsCount = 0;
 
         @media screen and (min-width:20em) {  /*320px*/
             button#btn {
-                display: flex;
-                margin: 0 auto;
+                left: 15vw;
             }
         }
 

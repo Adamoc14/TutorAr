@@ -124,10 +124,10 @@
 
         @media screen and (min-width:20em) {  /*320px*/
             .arrowTwo{
-                top: -26vh;
+                top: -49vh;
                 width: 13vw;
                 height: 10vh;
-                left: 41vw;
+                left: 37vw;
             }
 
         }
