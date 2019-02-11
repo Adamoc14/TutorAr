@@ -138,6 +138,7 @@
             #labels {
                 margin-left: 10vw;
                 top:2.5vh;
+                width: 60vw;
             }
         }
 
@@ -145,7 +146,7 @@
             #labels {
                 margin-left: 0vw;
                 left: -5vw;
-                width: 40vw;
+                
             }
         }
 
