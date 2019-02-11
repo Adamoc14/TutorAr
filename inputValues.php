@@ -38,9 +38,15 @@ $labelsCount = 0;
         @media screen and (min-width:20em) {  /*320px*/
             form#form1 {
                 width: 50vw;
-                margin: 0 10vw;
+                margin: 0 8vw;
             }
 
+        }
+
+        @media screen and (min-width:20em) { /*320px*/
+            label{
+                font-size: 13px;
+            }
         }
 
         img.img {
@@ -53,7 +59,7 @@ $labelsCount = 0;
 
         @media screen and (min-width:20em) {  /*320px*/
             img.img {
-                top: -88vh;
+                top: -95vh;
                 left: 32vw;
                 width: 60vw;
             }
@@ -68,7 +74,13 @@ $labelsCount = 0;
         }
 
         @media screen and (min-width:20em) {  /*320px*/
+            button#btn {
+                display: flex;
+                margin: 0 auto;
+            }
         }
+
+
 
 
 
