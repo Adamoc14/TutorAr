@@ -158,6 +158,12 @@
             margin-bottom: 2.5vh;
         }
 
+        @media screen and (min-width:20em) {  /*320px*/
+            input[type="checkbox"] {
+                top: -25vh;
+            }
+        }
+
         @media screen and (min-width:87em){  /*1920px*/
             input[type="checkbox"] {
                 top: -34.5vh;
@@ -177,6 +183,7 @@
             img {
                 width: 35vw;
                 margin: 5vh 19vw;
+                top: 4vh
             }
         }
 
