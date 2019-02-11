@@ -24,7 +24,7 @@ $labelsCount = 0;
 
         @media screen and (min-width:20em) {  /*320px*/
             h2{
-                font-size: 19px;
+                font-size: 16px;
             }
         }
 
