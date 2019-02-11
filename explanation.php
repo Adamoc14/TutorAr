@@ -124,10 +124,10 @@
 
         @media screen and (min-width:20em) {  /*320px*/
             .arrowTwo{
-                top: -49vh;
+                top: -26vh;
                 width: 13vw;
                 height: 10vh;
-                left: 37vw;
+                left: 27vw;
             }
 
         }
@@ -164,7 +164,7 @@
 
         @media screen and (min-width:20em) {  /*320px*/
             .firstExplain{
-                top: -21vh;
+                top: -60vh;
             }
 
         }
