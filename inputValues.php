@@ -328,8 +328,7 @@ $labelsCount = 0;
         var image = document.querySelector('.img');
         $(image).css('display', 'none');
         $(button).css('display', 'none');
-        $(text).css('display', 'none'); 
-        event.preventDefault();
+        $(text).css('display', 'none');
     });
 
         
