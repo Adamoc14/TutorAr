@@ -87,7 +87,7 @@ $labelsCount = 0;
  </head>
  <body>
      
-    <?php include("explanation.php"); ?>
+    <?php include_once("explanation.php"); ?>
 
 
     <h2>Now that you've set out the properties your <?php echo  $_SESSION['type'] ?>  should have, <br> lets give these properties values to make your  <?php echo  $_SESSION['type'] ?> become a reality!</h1>
@@ -171,13 +171,13 @@ $labelsCount = 0;
                             echo ""; 
                         }
                     } else {
-                        
+                      echo "<h1>I see you did not click any values , well you can't make a object with no values</h1>";
                     }
                 }
             }
             
         } else {
-            echo "You didn't pick any properties";
+            echo "Click Done to see your model";
         }
 
 
@@ -245,7 +245,6 @@ $labelsCount = 0;
 
                 $array_data[] = $extra;
                 $final_data = json_encode($array_data);
-                print_r($final_data);
                 file_put_contents('data.json', $final_data); 
 
 
@@ -273,7 +272,7 @@ $labelsCount = 0;
 
     ?>
 
-    <main id= "results"></main>
+    
 
 
 
@@ -321,6 +320,20 @@ $labelsCount = 0;
     //     event.preventDefault();
 
     // });
+
+        var button = document.querySelector('#btn');
+        var text = document.querySelector('h2');
+        var form = document.querySelector('#form1');
+    $(button).click(function(event){
+        var image = document.querySelector('.img');
+        $(image).css('display', 'none');
+        $(button).css('display', 'none');
+        $(text).css('display', 'none'); 
+        event.preventDefault();
+    });
+
+        
+
 
 
 </script>
