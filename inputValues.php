@@ -108,7 +108,7 @@ $labelsCount = 0;
 
         $labelsCount = count($labels) - 1;
 
-        echo "<form method=\"post\" id=\"form1\" >";
+        echo "<form method=\"post\" id=\"form1\" action=\"lastPage.php\">";
 
         if(!empty($_POST["Checkboxes"])){
             foreach($_POST["Checkboxes"] as $checkbox) {
@@ -321,15 +321,6 @@ $labelsCount = 0;
 
     // });
 
-        var button = document.querySelector('#btn');
-        var text = document.querySelector('h2');
-        var form = document.querySelector('#form1');
-    $(button).click(function(event){
-        var image = document.querySelector('.img');
-        $(image).css('display', 'none');
-        $(button).css('display', 'none');
-        $(text).css('display', 'none');
-    });
 
         
 
