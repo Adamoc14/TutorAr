@@ -19,23 +19,23 @@
         if ($type == "dog") {
             $img = 'Images/Dog.jpg';
             $typeLabel = 'Dog';
-            array_push($labels, "Main Colour", "Bushy Tail", "Name", "Age", "Type", "Weight", "Height");
+            array_push($labels, "Name", "Age", "Type", "Weight", "Height");
             // echo $img , $typeLabel;
             // foreach($labels as $label){
             //     print_r($label);
             // }
-        } else if ($type == "book") {
-            $img = 'Images/book.jpg';
-            $typeLabel = 'Book';
-            array_push($labels, "Font", "Number of pages" ,"Title" ,"Price" ,"Weight" ,"Author" ,"Genre");
+        } else if ($type == "fish") {
+            $img = 'Images/fish.jpg';
+            $typeLabel = 'Fish';
+            array_push($labels, "Name" ,"Age" ,"Type" ,"Weight" ,"Height");
             // echo $img , $typeLabel;
             // foreach($labels as $label){
             //     print_r($label);
             // }
         } else if ($type == "house") {
-            $img = 'Images/house.jpg';
-            $typeLabel = 'House';
-            array_push($labels , "Colour","Door Colour","Number of windows","Type of windows","Number of Storeys","Number of rooms ","Southfacing / Northfacing ");
+            $img = 'Images/cat.jpg';
+            $typeLabel = 'Cat';
+            array_push($labels , "Name","Age","Type","Weight","Height");
             // echo $img , $typeLabel;
             // foreach($labels as $label){
             //     print_r($label);

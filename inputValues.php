@@ -97,11 +97,11 @@ $labelsCount = 0;
         
 
         if ($_SESSION['type']== "dog") {
-            array_push($labels, "Main Colour", "Bushy Tail", "Name", "Age", "Type", "Weight", "Height");
-        } else if($_SESSION['type']== "book"){
-            array_push($labels, "Font", "Number of pages" ,"Title" ,"Price" ,"Weight" ,"Author" ,"Genre");
-        } else if($_SESSION['type'] == "house") {
-            array_push($labels , "Colour","Door Colour","Number of windows","Type of windows","Number of Storeys","Number of rooms ","Southfacing / Northfacing ");
+            array_push($labels, "Name", "Age", "Type", "Weight", "Height");
+        } else if($_SESSION['type']== "cat"){
+            array_push($labels, "Name", "Age", "Type", "Weight", "Height");
+        } else if($_SESSION['type'] == "fish") {
+            array_push($labels , "Name", "Age", "Type", "Weight", "Height");
         } else {
             $labels = [];
         }
@@ -114,13 +114,9 @@ $labelsCount = 0;
             foreach($_POST["Checkboxes"] as $checkbox) {
                 for ($i=0; $i < 1; $i++) {                     
                     echo "<label>$labels[$checkbox]:</label>&nbsp;&nbsp;";
+
                     if ($_SESSION['type']== "dog") {
-            
-                        if(strpos($labels[$checkbox], "Main Colour")!== false){
-                            echo "<select name=\"main-colour\"><option>Grey</option><option>White</option><option>Jet Black</option><option>Red</option><option>Gold</option><option>Charcoal</option><option>Silver</option></select><br>";
-                        } else if (strpos($labels[$checkbox], "Bushy Tail")!== false){
-                            echo "Yes<input type= \"radio\" value= \"Yes\" name=\"has-bushy-tail\">&nbsp;&nbsp;No<input type= \"radio\" value= \"No\" name=\"has-bushy-tail\"><br>";
-                        } else if (strpos($labels[$checkbox], "Name")!== false){
+                        if (strpos($labels[$checkbox], "Name")!== false){
                             echo "<input type= \"text\" name=\"dog-name\"><br>";
                         } else if (strpos($labels[$checkbox], "Age")!== false) {
                             echo "<input type= \"text\" name=\"dog-age\"><br>";
@@ -133,40 +129,33 @@ $labelsCount = 0;
                         } else{
                             echo ""; 
                         }
-                    } else if($_SESSION['type']== "book"){
-                        if(strpos($labels[$checkbox], "Font")!== false){
-                            echo "<select name=\"book-font\"><option>Times New Roman</option><option>Georgia</option><option>Fantasy</option></select><br>";
-                        } else if (strpos($labels[$checkbox], "Number of pages")!== false){
-                            echo "<input type= \"text\" name=\"book-page-num\"><br>";
-                        } else if (strpos($labels[$checkbox], "Title")!== false){
-                            echo "<input type= \"text\" name=\"book-title\"><br>";
-                        } else if (strpos($labels[$checkbox], "Price")!== false) {
-                            echo "<input type= \"text\" name=\"book-price\"><br>";
+
+                    } else if($_SESSION['type']== "cat"){
+                        if (strpos($labels[$checkbox], "Name")!== false){
+                            echo "<input type= \"text\" name=\"cat-name\"><br>";
+                        } else if (strpos($labels[$checkbox], "Age")!== false) {
+                            echo "<input type= \"text\" name=\"cat-age\"><br>";
+                        } else if (strpos($labels[$checkbox], "Type")!== false){
+                            echo "<select name=\"cat-type\"><option>Wolfhound</option><option>Husky</option><option>Greyhound</option><option>Korean Jindo</option><option>Golden Retriever</option><option>Labrador</option><option>Samoy</option></select><br>";
                         } else if (strpos($labels[$checkbox], "Weight")!== false){
-                            echo "<input type= \"text\" name=\"book-weight\"><br>";
-                        } else if (strpos($labels[$checkbox], "Author")!== false){
-                            echo "<input type= \"text\" name=\"book-author\"><br>";
-                        } elseif (strpos($labels[$checkbox], "Genre")!== false) {
-                            echo "<select name=\"book-genre\"><option>Horror</option><option>Action</option><option>Romance</option></select><br>";
+                            echo "<input type= \"text\" name=\"cat-weight\"><br>";
+                        } elseif (strpos($labels[$checkbox], "Height")!== false) {
+                            echo "<input type= \"text\" name=\"cat-height\"><br>";
                         } else{
                             echo ""; 
                         }
                         
-                    } else if($_SESSION['type'] == "house") {
-                        if(strpos($labels[$checkbox], "Colour")!== false){
-                            echo "<select name=\"house-colour\"><option>Red</option><option>Black</option><option>Brown</option></select><br>";
-                        } else if (strpos($labels[$checkbox], "Door Colour")!== false){
-                            echo "<select name=\"house-door-colour\"><option>Red</option><option>Black</option><option>Brown</option></select><br>";
-                        } else if (strpos($labels[$checkbox], "Number of windows")!== false){
-                            echo "<input type= \"text\" name=\"house-windows-num\"><br>";
-                        } else if (strpos($labels[$checkbox], "Type of windows")!== false) {
-                            echo "<select name=\"house-windows-type\"><option>Double Glazed</option><option>Single Glazed</option><option>Triple Glazed</option></select><br>";
-                        } else if (strpos($labels[$checkbox], "Number of Storeys")!== false){
-                            echo "<input type= \"text\" name=\"house-storeys-num\"><br>";
-                        } else if (strpos($labels[$checkbox], "Number of rooms")!== false){
-                            echo "<input type= \"text\" name=\"house-rooms-num\"><br>";
-                        } elseif (strpos($labels[$checkbox], "Southfacing / Northfacing")!== false) {
-                            echo "S<input type= \"radio\" value= \"Southfacing\" name=\"south/north\">&nbsp;&nbsp;N<input type= \"radio\" value= \"Northfacing\" name=\"south/north\"><br>";
+                    } else if($_SESSION['type'] == "fish") {
+                        if (strpos($labels[$checkbox], "Name")!== false){
+                            echo "<input type= \"text\" name=\"fish-name\"><br>";
+                        } else if (strpos($labels[$checkbox], "Age")!== false) {
+                            echo "<input type= \"text\" name=\"fish-age\"><br>";
+                        } else if (strpos($labels[$checkbox], "Type")!== false){
+                            echo "<select name=\"fish-type\"><option>Wolfhound</option><option>Husky</option><option>Greyhound</option><option>Korean Jindo</option><option>Golden Retriever</option><option>Labrador</option><option>Samoy</option></select><br>";
+                        } else if (strpos($labels[$checkbox], "Weight")!== false){
+                            echo "<input type= \"text\" name=\"fish-weight\"><br>";
+                        } elseif (strpos($labels[$checkbox], "Height")!== false) {
+                            echo "<input type= \"text\" name=\"fish-height\"><br>";
                         } else{
                             echo ""; 
                         }
@@ -208,8 +197,6 @@ $labelsCount = 0;
 
                 if ($_SESSION['type']== "dog") {
                     $extra = array(
-                        'Main_Colour' => $_POST['main-colour'],
-                        'Bushy_Tail' => $_POST['has-bushy-tail'],
                         'Dog_Name' => $_POST['dog-name'],
                         'Dog_Age' => $_POST['dog-age'],
                         'Dog_Type' => $_POST['dog-type'],
@@ -217,29 +204,24 @@ $labelsCount = 0;
                         'Dog_Height' => $_POST['dog-height'],
 
                     );
-                } else if($_SESSION['type']== "book"){
+                } else if($_SESSION['type']== "fish"){
                     $extra = array(
-                        'Book_Font' => $_POST['book-font'],
-                        'Number_Of_Pages' => $_POST['book-page-num'],
-                        'Book_Title' => $_POST['book-title'],
-                        'Book_Price' => $_POST['book-price'],
-                        'Book_Weight' => $_POST['book-weight'],
-                        'Book_Author' => $_POST['book-author'],
-                        'Book_Genre' => $_POST['book-genre'],
+                        'Fish_Name' => $_POST['fish-name'],
+                        'Fish_Age' => $_POST['fish-age'],
+                        'Fish_Type' => $_POST['fish-type'],
+                        'Fish_Weight' => $_POST['fish-weight'],
+                        'Fish_Height' => $_POST['fish-height'],
 
                     );
 
 
-                } else if($_SESSION['type'] == "house") {
+                } else if($_SESSION['type'] == "cat") {
                     $extra = array(
-                        'House_Colour' => $_POST['house-colour'],
-                        'Door_Colour' => $_POST['house-door-colour'],
-                        'Number_Of_Windows' => $_POST['house-windows-num'],
-                        'Type_Of_Windows' => $_POST['house-windows-type'],
-                        'Number_Of_Storeys' => $_POST['house-storeys-num'],
-                        'Number_Of_Rooms' => $_POST['house-rooms-num'],
-                        'Southfacing/Northfacing' => $_POST['south/north'],
-
+                        'Cat_Name' => $_POST['cat-name'],
+                        'Cat_Age' => $_POST['cat-age'],
+                        'Cat_Type' => $_POST['cat-type'],
+                        'Cat_Weight' => $_POST['cat-weight'],
+                        'Cat_Height' => $_POST['cat-height'],
                     );
 
                 } else {
