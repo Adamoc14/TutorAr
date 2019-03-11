@@ -99,9 +99,9 @@ $labelsCount = 0;
         if ($_SESSION['type']== "dog") {
             array_push($labels, "Name", "Age", "Type", "Weight", "Height");
         } else if($_SESSION['type']== "cat"){
-            array_push($labels, "Name", "Age", "Type", "Weight", "Height");
+            array_push($labels, "Name", "Age", "Colour", "Weight", "Height");
         } else if($_SESSION['type'] == "fish") {
-            array_push($labels , "Name", "Age", "Type", "Weight", "Height");
+            array_push($labels , "Name", "Age", "Colour", "Weight", "Height");
         } else {
             $labels = [];
         }
