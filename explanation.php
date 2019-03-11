@@ -5,10 +5,10 @@
 
     if ($_SESSION['type']== "dog") {
         $img = "Images/DogOBJ.JPG";
-    } else if($_SESSION['type']== "book"){
-        $img = "Images/BookOBJ.JPG";
-    } else if($_SESSION['type'] == "house") {
-        $img = "Images/HouseOBJ.JPG";
+    } else if($_SESSION['type']== "cat"){
+        $img = "Images/CatOBJ.JPG";
+    } else if($_SESSION['type'] == "fish") {
+        $img = "Images/FishOBJ.JPG";
     } else {
         $img = "";
     }
