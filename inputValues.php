@@ -135,8 +135,8 @@ $labelsCount = 0;
                             echo "<input type= \"text\" name=\"cat-name\"><br>";
                         } else if (strpos($labels[$checkbox], "Age")!== false) {
                             echo "<input type= \"text\" name=\"cat-age\"><br>";
-                        } else if (strpos($labels[$checkbox], "Type")!== false){
-                            echo "<select name=\"cat-type\"><option>Wolfhound</option><option>Husky</option><option>Greyhound</option><option>Korean Jindo</option><option>Golden Retriever</option><option>Labrador</option><option>Samoy</option></select><br>";
+                        } else if (strpos($labels[$checkbox], "Colour")!== false){
+                            echo "<select name=\"cat-type\"><option>Black And White</option><option>Ginger</option><option>Charcoal</option><option>Grey</option><option>Silver</option><option>Orange</option>";
                         } else if (strpos($labels[$checkbox], "Weight")!== false){
                             echo "<input type= \"text\" name=\"cat-weight\"><br>";
                         } elseif (strpos($labels[$checkbox], "Height")!== false) {
@@ -150,8 +150,8 @@ $labelsCount = 0;
                             echo "<input type= \"text\" name=\"fish-name\"><br>";
                         } else if (strpos($labels[$checkbox], "Age")!== false) {
                             echo "<input type= \"text\" name=\"fish-age\"><br>";
-                        } else if (strpos($labels[$checkbox], "Type")!== false){
-                            echo "<select name=\"fish-type\"><option>Wolfhound</option><option>Husky</option><option>Greyhound</option><option>Korean Jindo</option><option>Golden Retriever</option><option>Labrador</option><option>Samoy</option></select><br>";
+                        } else if (strpos($labels[$checkbox], "Colour")!== false){
+                            echo "<select name=\"fish-type\"><option>Finding Nemo</option><option>Black And Orange</option><option>Blue And Salmon</option><option>Light Blue</option><option>Dory</option><option>Tuna</option><option>Silver And Red Tailed</option><option>Golden Yellow And Black</option><option>Pink And Blue</option></select><br>";
                         } else if (strpos($labels[$checkbox], "Weight")!== false){
                             echo "<input type= \"text\" name=\"fish-weight\"><br>";
                         } elseif (strpos($labels[$checkbox], "Height")!== false) {
