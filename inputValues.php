@@ -108,7 +108,7 @@ $labelsCount = 0;
 
         $labelsCount = count($labels) - 1;
 
-        echo "<form method=\"post\" id=\"form1\" action=\"lastPage.php\">";
+        echo "<form method=\"post\" id=\"form1\">";
 
         if(!empty($_POST["Checkboxes"])){
             foreach($_POST["Checkboxes"] as $checkbox) {
@@ -197,7 +197,10 @@ $labelsCount = 0;
             // } else if($_SESSION['type'] == "house" && empty($_POST['house-colour']) || empty($_POST['house-door-colour']) || empty($_POST['house-windows-num']) || empty($_POST['house-windows-type']) || empty($_POST['house-storeys-num']) || empty($_POST['house-rooms-num']) || empty($_POST['south/north']) )  {
             //         $error = "<label>Enter Book Details</label>";
             // } else {
-
+                $dom = new DOMDocument();
+                $dom->load("index.php");
+                $div = $dom->getElementById('btn');
+                $attr = $div->getAttribute('');  
             
             if(file_exists('data.json')){
                 $current_data = file_get_contents('data.json');
