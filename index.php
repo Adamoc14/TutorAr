@@ -32,7 +32,7 @@
             // foreach($labels as $label){
             //     print_r($label);
             // }
-        } else if ($type == "house") {
+        } else if ($type == "cat") {
             $img = 'Images/cat.jpg';
             $typeLabel = 'Cat';
             array_push($labels , "Name","Age","Type","Weight","Height");
