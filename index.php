@@ -223,7 +223,7 @@
 <body>
     <?php 
 
-        $strArray = array("0","1","2","3","4","5","6");
+        $strArray = array("0","1","2","3","4");
         $strSelected = "";
         
        echo "<div>";
@@ -232,10 +232,8 @@
 
        echo "<form action = \"inputValues.php\" method=\"post\" id=\"form1\" >";
 
-       foreach ($labels as $label) {
-            
-             echo  "<label for=\"Checkboxes\" id=\"labels\">$label</label>";
-
+        foreach ($labels as $label) {
+          echo  "<label for=\"Checkboxes\" id=\"labels\">$label</label>";
         }
 
         for($i = 0 ; $i < count($strArray); $i ++){
