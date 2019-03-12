@@ -27,7 +27,7 @@
         } else if ($type == "fish") {
             $img = 'Images/fish.jpg';
             $typeLabel = 'Fish';
-            array_push($labels, "Name" ,"Age" ,"Type" ,"Weight" ,"Height");
+            array_push($labels, "Name" ,"Age" ,"Colour" ,"Weight" ,"Height");
             // echo $img , $typeLabel;
             // foreach($labels as $label){
             //     print_r($label);
@@ -35,7 +35,7 @@
         } else if ($type == "cat") {
             $img = 'Images/cat.jpg';
             $typeLabel = 'Cat';
-            array_push($labels , "Name","Age","Type","Weight","Height");
+            array_push($labels , "Name","Age","Colour","Weight","Height");
             // echo $img , $typeLabel;
             // foreach($labels as $label){
             //     print_r($label);

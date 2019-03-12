@@ -136,7 +136,7 @@ $labelsCount = 0;
                         } else if (strpos($labels[$checkbox], "Age")!== false) {
                             echo "<input type= \"text\" name=\"cat-age\"><br>";
                         } else if (strpos($labels[$checkbox], "Colour")!== false){
-                            echo "<select name=\"cat-type\"><option>Black And White</option><option>Ginger</option><option>Charcoal</option><option>Grey</option><option>Silver</option><option>Orange</option>";
+                            echo "<select name=\"cat-type\"><option>Black And White</option><option>Ginger</option><option>Charcoal</option><option>Grey</option><option>Silver</option><option>Orange</option></select><br>";
                         } else if (strpos($labels[$checkbox], "Weight")!== false){
                             echo "<input type= \"text\" name=\"cat-weight\"><br>";
                         } elseif (strpos($labels[$checkbox], "Height")!== false) {
