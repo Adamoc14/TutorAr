@@ -231,7 +231,7 @@ $labelsCount = 0;
                 $array_data[] = $extra;
                 $final_data = json_encode($array_data);
                 file_put_contents('data.json', $final_data); 
-
+                alert("Click DONE to see your model");
 
             } else {
                 $error = 'JSON File does not exist';
