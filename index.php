@@ -162,7 +162,7 @@
 
         @media screen and (min-width:20em) {  /*320px*/
             input[type="checkbox"] {
-                top: -40vh;
+                top: -20vh;
             }
         }
 
@@ -203,7 +203,7 @@
 
         @media screen and (min-width:20em) {  /*320px*/
             .button{
-                top: -40vh;
+                top: -13vh;
                 padding: 1vh 11vw;
             }
         }
