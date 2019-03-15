@@ -49,19 +49,20 @@ $labelsCount = 0;
             }
         }
 
-        img.img {
+        /* img.img {
             position: relative;
             top: -55vh;
             left: 37vw;
             width: 30vw;
             border-radius: 20px;
-        }
+        } */
 
         @media screen and (min-width:20em) {  /*320px*/
             img.img {
-                top: -105vh;
-                left: 32vw;
+                display: flex;
+                margin: 0 auto;
                 width: 60vw;
+                border-radius: 20px;
             }
 
 
@@ -89,7 +90,7 @@ $labelsCount = 0;
      
     <?php include_once("explanation.php"); ?>
 
-
+    <img src="Images/3DPrinting.gif" class="img">
     <h2>Now that you've set out the properties your <?php echo  $_SESSION['type'] ?>  should have, <br> lets give these properties values to make your  <?php echo  $_SESSION['type'] ?> become a reality!</h1>
 
     <?php
@@ -243,7 +244,7 @@ $labelsCount = 0;
 
         echo "</form>";
 
-        echo "<img src=\"Images/3DPrinting.gif\" class=\"img\">"
+        
 
         /*This is how to check which checkboxes have been clicked , give everyone of the checkboxes
         a name like "Checkboxes[]" and then you can refer to them in the page you posted them too by using the !empty function
