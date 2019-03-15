@@ -40,7 +40,7 @@ $labelsCount = 0;
                 width: 50vw;
                 margin: 0 8vw;
                 min-height: 60vh;
-                height: 60vh;
+                height: 80vh;
             }
 
         }
