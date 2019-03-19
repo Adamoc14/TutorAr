@@ -39,8 +39,8 @@ $labelsCount = 0;
             form#form1 {
                 width: 50vw;
                 margin: 0 8vw;
-                min-height: 60vh;
-                height: 80vh;
+                min-height: 80vh;
+                height: 100vh;
             }
 
         }
